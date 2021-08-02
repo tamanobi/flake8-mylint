@@ -16,4 +16,5 @@ class Plugin:
         self._tree = tree
 
     def run(self) -> Generator[Tuple[int, int, str, Type[Any]], None, None]:
+        return
         yield 1, 0, "FML100 hogehoge", type(self)
