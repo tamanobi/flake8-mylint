@@ -1,5 +1,6 @@
 import ast
 import sys
+from typing import Generator, Tuple, Type, Any
 
 if sys.version_info < (3, 8):
     import importlib_metadata
@@ -13,5 +14,5 @@ class Plugin:
     def __init__(self, tree: ast.AST) -> None:
         self._tree = tree
     
-    def run(self):
+    def run(self) -> Generator[Tuple[int, int, str, Type[Any]], None, None]:
         yield 1, 0, "FML100 hogehoge", type(self)
